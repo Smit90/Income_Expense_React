@@ -40,7 +40,7 @@
     {
         app.use(express.static('client/build))
 
-        app.gte('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')))
+        app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')))
     }
 
 ### 4. Start Production build
