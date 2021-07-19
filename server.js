@@ -12,6 +12,10 @@ connectDB();
 app.use(express.json());
 app.use("/api/v1/transactions", transactions);
 
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("tiny"));
+}
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(
